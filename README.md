@@ -18,7 +18,9 @@ You need to specify the `distorted video`, `video height` and `video width`.
 
 ### Quality Prediction
 #### Full-Reference Model Quality Prediction
-The FR model weights provided in `./models/FR_model` are the saved weights when running on LIVE-SJTU.
+The FR model weights provided in `./models/FR_model` are the saved weights when running on LIVE-SJTU. During training, we randomly split each database
+into three sets: a training set (80% of the A/V sequences), a validation set (20% of the A/V sequences) and a testing set (20% of the A/V sequences) without overlapping each
+other. We train models only on the training set, find the top models `./models/NR_model` on the validation set (PowerDig class and RedKayak class) and test the top model on the testing set (FootMusic class and Sparks class).
 ```
 python FR_LS_test.py --ref_video_path='./ref_test.yuv' --dis_video_path='./dis_test.yuv' --dis_audio_path='./dis_test.wav' --ref_audio_path='./ref_test.wav' --frame_rate=24
 ```
@@ -27,7 +29,10 @@ Because the video resolution of LIVE-SJTU is `1080p`, our default settings of he
 You can change by `--video_width=` and `--video_height=`.
 
 #### No-Reference Model Quality Prediction
-The NR model weights and NR model weights provided in `./models/NR_model` are the saved weights when running on LIVE-SJTU.
+The NR model weights provided in `./models/NR_model` are the saved weights when running on LIVE-SJTU.  During training, we randomly split each database
+into three sets: a training set (80% of the A/V sequences), a validation set (20% of the A/V sequences) and a testing set (20% of the A/V sequences) without overlapping each
+other. We train models only on the training set, find the top models `./models/NR_model` on the validation set (PowerDig class and RedKayak class) and test the top model on the testing set (FootMusic class and Sparks class).
+ 
 ```
 python NR_LS_test.py --dis_video_path='./dis_test.yuv' --dis_audio_path='./dis_test.wav' --frame_rate=24
 ```
