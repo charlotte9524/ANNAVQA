@@ -6,7 +6,11 @@ ANNAVQA code for the following papers:
 
 - Y. Cao, X. Min, W. Sun and G. Zhai, "Deep Neural Networks For Full-Reference And No-Reference Audio-Visual Quality Assessment," 
   2021 IEEE International Conference on Image Processing (ICIP), 2021, pp. 1429-1433, doi: 10.1109/ICIP42928.2021.9506408.
-  
+
+## Update content
+We update the model which you can get from BaiduNetdisk. The validation sets of new model are PowerDig class and RedKayak class. The testing sets of new model are Fountain class and Speech class.
+Link：https://pan.baidu.com/s/1A85T0H4olzYNB_5CQAXVHQ 
+Password：s173
 ## Test Demo
 The test video should be provided in raw `YUV 4:2:0` format. The test audio should be provided in `wav` format.
 ### Saliency Detection
@@ -20,7 +24,7 @@ You need to specify the `distorted video`, `video height` and `video width`.
 #### Full-Reference Model Quality Prediction
 The FR model weights provided in `./models/FR_model` are the saved weights when running on LIVE-SJTU. During training, we randomly split each database
 into three sets: a training set (80% of the A/V sequences), a validation set (20% of the A/V sequences) and a testing set (20% of the A/V sequences) without overlapping each
-other. We train models only on the training set, find the top models `./models/NR_model` on the validation set (PowerDig class and RedKayak class) and test the top model on the testing set (FootMusic class and Sparks class).
+other. We train models only on the training set, find the top models `./models/NR_model` on the validation set and test the top model on the testing set.
 ```
 python FR_LS_test.py --ref_video_path='./ref_test.yuv' --dis_video_path='./dis_test.yuv' --dis_audio_path='./dis_test.wav' --ref_audio_path='./ref_test.wav' --frame_rate=24
 ```
@@ -31,7 +35,7 @@ You can change by `--video_width=` and `--video_height=`.
 #### No-Reference Model Quality Prediction
 The NR model weights provided in `./models/NR_model` are the saved weights when running on LIVE-SJTU.  During training, we randomly split each database
 into three sets: a training set (80% of the A/V sequences), a validation set (20% of the A/V sequences) and a testing set (20% of the A/V sequences) without overlapping each
-other. We train models only on the training set, find the top models `./models/NR_model` on the validation set (PowerDig class and RedKayak class) and test the top model on the testing set (FootMusic class and Sparks class).
+other. We train models only on the training set, find the top models `./models/NR_model` on the validation set and test the top model on the testing set.
  
 ```
 python NR_LS_test.py --dis_video_path='./dis_test.yuv' --dis_audio_path='./dis_test.wav' --frame_rate=24
