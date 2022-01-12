@@ -8,7 +8,7 @@ ANNAVQA code for the following papers:
   2021 IEEE International Conference on Image Processing (ICIP), 2021, pp. 1429-1433, doi: 10.1109/ICIP42928.2021.9506408.
 
 ## Update content
-We update the model which you can get from BaiduNetdisk. The validation sets of new model are PowerDig class and RedKayak class. The testing sets of new model are Fountain class and Speech class.
+We update the models which you can get from BaiduNetdisk. The validation sets of new models are PowerDig class and RedKayak class. The testing sets of new models are Fountain class and Speech class.
 Link：https://pan.baidu.com/s/1A85T0H4olzYNB_5CQAXVHQ 
 Password：s173
 ## Test Demo
